@@ -23,6 +23,7 @@ public class SupplierController {
         return supplierService.getAllSuppliers();
     }
 
+
     //creating a new supplier
     @PostMapping("/supplier/save")
     public Supplier saveSupplier(@RequestBody Supplier supplier){
