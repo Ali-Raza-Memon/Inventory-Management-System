@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -23,4 +24,7 @@ public class Customer {
     private String customer_address;
     private String phone_number;
     private String email;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 }

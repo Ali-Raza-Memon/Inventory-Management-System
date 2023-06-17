@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,9 +24,11 @@ public class Product {
     private double price;
     private double quantity_in_stock;
 
-    //Foreign key
-    private Long supplier_id;
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
 
-
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems;
 
 }

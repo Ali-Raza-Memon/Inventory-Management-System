@@ -7,17 +7,32 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table
+@Table(name = "orders")
 @ToString
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_id;
-    private String order_date;
+    private LocalDate orderDate;
     private Long total_amount;
+
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
+
+
+
+
 }

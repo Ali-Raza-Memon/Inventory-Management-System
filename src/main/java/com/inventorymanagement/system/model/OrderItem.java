@@ -19,16 +19,15 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_item_id;
-
-    //foreign key
-    private Long order_id;
-
-    //foreign key
-    private Long product_id;
-
     private double quantity;
-
     private double unit_price;
 
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
 }
