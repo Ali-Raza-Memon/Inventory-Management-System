@@ -14,14 +14,21 @@ import javax.persistence.*;
 @Table
 @ToString
 
-public class Supplier {
+public class OrderItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long supplier_id;
-    private String supplier_name;
-    private String contact_person;
-    private String address;
-    private String phone_number;
-    private String email;
+    private Long order_item_id;
+
+    //foreign key
+    private Long order_id;
+
+    //foreign key
+    private Long product_id;
+
+    private double quantity;
+
+    private double unit_price;
+
 
 }
