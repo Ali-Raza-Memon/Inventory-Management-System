@@ -13,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Customer")
+@Table(name="customer")
 @ToString
 public class Customer {
 

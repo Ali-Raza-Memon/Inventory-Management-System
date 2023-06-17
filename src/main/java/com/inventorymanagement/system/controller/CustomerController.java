@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@RestController
 public class CustomerController {
-
-
 
 
     @Autowired
@@ -38,7 +36,7 @@ public class CustomerController {
 
 
     //update a specific product by id
-    @PutMapping("/product/update")
+    @PutMapping("/customer/update")
     public Customer updateCustomer(@RequestBody Customer customer){
         return customerService.updateCustomer(customer);
     }
