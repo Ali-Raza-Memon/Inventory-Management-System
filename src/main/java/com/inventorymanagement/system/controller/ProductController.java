@@ -2,6 +2,7 @@ package com.inventorymanagement.system.controller;
 
 import com.inventorymanagement.system.model.Product;
 import com.inventorymanagement.system.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,12 +11,14 @@ import java.util.Optional;
 @RestController
 public class ProductController {
 
+
+    @Autowired
     private ProductService productService;
 
     //Retreive a list of all products
     @GetMapping("/allProduct")
     public List<Product> getAllProducts(){
-        return productService. getAllProducts();
+        return productService.getAllProducts();
     }
 
 
@@ -36,7 +39,7 @@ public class ProductController {
     //update a specific product by id
     @PutMapping("/product/update")
     public Product updateProduct(@RequestBody Product product){
-        return productService.updateById(product);
+        return productService.updateProduct(product);
     }
 
 

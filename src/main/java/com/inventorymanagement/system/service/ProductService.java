@@ -32,7 +32,7 @@ public class ProductService {
     }
 
     //update a specific product by id
-    public Product updateById(Product product){
+    public Product updateProduct(Product product){
         Product existingProduct = productRepository.findById(product.getProduct_id()).orElse(null);
         existingProduct.setProduct_name(product.getProduct_name());
         existingProduct.setDescription(product.getDescription());
