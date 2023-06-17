@@ -34,13 +34,11 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
 
-
     //update a specific product by id
     @PutMapping("/customer/update")
     public Customer updateCustomer(@RequestBody Customer customer){
         return customerService.updateCustomer(customer);
     }
-
 
 
 

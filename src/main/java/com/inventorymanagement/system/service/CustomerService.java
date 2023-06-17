@@ -43,16 +43,12 @@ public class CustomerService {
        return customerRepository.save(existingCustomer);
     }
 
-
     //Delete a specific product by id
 
     public String deleteById(Long id){
         customerRepository.deleteById(id);
         return "Product deleted by Id"+id;
     }
-
-
-
 
 
 }
