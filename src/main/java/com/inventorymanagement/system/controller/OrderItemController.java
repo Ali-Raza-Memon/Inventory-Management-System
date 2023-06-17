@@ -31,13 +31,13 @@ public class OrderItemController {
     }
 
 
-    //Retrieve a specific product by id
+    //Retrieve a specific OrderItem by id
     @GetMapping("/orderItem/{id}")
     public Optional<OrderItem> getById(@PathVariable Long id){
         return orderItemService.getOrderItemById(id);
     }
 
-    //update a specific product by id
+    //update a specific OrderItem by id
     @PutMapping("/orderItem/update")
     public OrderItem updateOrderItem(@RequestBody OrderItem orderItem){
         return orderItemService.updateOrderItem(orderItem);
