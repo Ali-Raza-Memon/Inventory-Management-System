@@ -17,24 +17,24 @@ public class OrderItemService {
     private OrderItemRepository orderItemRepository;
 
 
-    //Retreive a list of all products
+    //Retreive a list of all Order Item
     public List<OrderItem> getAllOrderITem(){
         return orderItemRepository.findAll();
     }
 
 
-    //creating a new product
-    public OrderItem saveProduct(OrderItem orderItem){
+    //creating a new Order Item
+    public OrderItem saveOrderItem(OrderItem orderItem){
         return orderItemRepository.save(orderItem);
     }
 
-    //Retrieve a specific product by id
+    //Retrieve a specific Order Item by id
     public Optional<OrderItem> getOrderItemById(Long id){
         return orderItemRepository.findById(id);
     }
 
-    //update a specific product by id
-    public OrderItem updateCustomer(OrderItem orderItem){
+    //update a specific OrderItem by id
+    public OrderItem updateOrderItem(OrderItem orderItem){
         OrderItem existingOrderItem = orderItemRepository.findById(orderItem.getOrder_item_id()).orElse(null);
         existingOrderItem.setQuantity(orderItem.getQuantity());
         existingOrderItem.setUnit_price(orderItem.getUnit_price());
@@ -43,10 +43,10 @@ public class OrderItemService {
     }
 
 
-    //Delete a specific product by id
+    //Delete a specific Order Item by id
     public String deleteById(Long id){
         orderItemRepository.deleteById(id);
-        return "Product deleted by Id"+id;
+        return "Order Item deleted by Id"+id;
     }
 
 
